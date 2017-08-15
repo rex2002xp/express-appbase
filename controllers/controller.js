@@ -11,6 +11,7 @@ class Controller {
         this.applicationName = process.env.APPLICATION_NAME || 'Application Base';
         this.title = "Home";
         this.scripts = [];
+        this.username = "";
     }
     
     /**
@@ -41,6 +42,7 @@ class Controller {
         res.locals.scripts = this.scripts;
         res.locals.title = this.title;
         res.locals.applicationName = this.applicationName;
+        res.locals.user = req.user;
         res.render(view, options);
     }
 };

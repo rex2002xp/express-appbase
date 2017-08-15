@@ -1,11 +1,13 @@
 "use strict";
 
-const Controller = require('./controller');
+const Controller = require('./controller')
+//const passport = require('../config/passport');
+const PassportMiddleware = require('../middlewares').PassportMiddleware
 
 class DashboardController extends Controller {
 
     static create(router) {
-        router.get('/dashboard', (req, res, next) => {
+        router.get('/dashboard', new PassportMiddleware().isAuthenticated, (req, res, next) => {
             new DashboardController().index(req, res, next);
         })
     }
