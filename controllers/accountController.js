@@ -1,8 +1,6 @@
 "use strict";
 
 const Controller = require('./controller')
-//const passportM = require('../config/passport');
-//const PassportMiddleware = require('../middlewares').PassportMiddleware
 
 class AccountController extends Controller {
 
